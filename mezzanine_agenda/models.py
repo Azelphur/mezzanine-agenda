@@ -36,6 +36,7 @@ class Event(Displayable, Ownable, RichText, AdminThumbMixin):
     featured_image = FileField(verbose_name=_("Featured Image"),
         upload_to=upload_to("mezzanine_agenda.Event.featured_image", "event"),
         format="Image", max_length=255, null=True, blank=True)
+    login_required = models.BooleanField(default=False)
 
     admin_thumb_field = "featured_image"
 

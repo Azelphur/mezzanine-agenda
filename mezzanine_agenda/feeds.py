@@ -62,6 +62,7 @@ class EventsRSS(Feed):
         if not self._public:
             return []
         events = Event.objects.published().select_related("user")
+        events.filter(login_required=False)
         if self.tag:
             tag = get_object_or_404(Keyword, slug=self.tag)
             events = events.filter(keywords__keyword=tag)

@@ -14,7 +14,7 @@ event_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
 event_fieldsets[0][1]["fields"].insert(1, ("start", "end"))
 event_fieldsets[0][1]["fields"].insert(2, "location")
 event_fieldsets[0][1]["fields"].insert(3, "facebook_event")
-event_fieldsets[0][1]["fields"].extend(["content", "allow_comments"])
+event_fieldsets[0][1]["fields"].extend(["content", "allow_comments", "login_required"])
 event_list_display = ["title", "user", "status", "admin_link"]
 if settings.EVENT_USE_FEATURED_IMAGE:
     event_fieldsets[0][1]["fields"].insert(-2, "featured_image")
